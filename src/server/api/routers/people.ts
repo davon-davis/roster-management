@@ -8,8 +8,7 @@ export type People = {
 
 export const peopleRouter = createTRPCRouter({
   getPeople: protectedProcedure.query(async (): Promise<People[]> => {
-    const result = await axios.get("http://localhost:8080/people");
-
+    const result = await axios.get("http://localhost:3002/people");
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return result.data;
   }),
